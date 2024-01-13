@@ -1,7 +1,7 @@
 # 萌咖大佬的一键DD脚本
 
 ## 注意:
-修复Error！grub.cfg ,开启支持Ubuntu 22.04
+修复Error！grub.cfg ,开启支持Ubuntu 22.04 建议不要直接装Ubuntu 22.04 因为会进入设置界面
 全自动安装默认root密码:``` MoeClub.org ```,安装完成后请立即更改密码.
 
 能够全自动重装Debian/Ubuntu/CentOS等系统.
