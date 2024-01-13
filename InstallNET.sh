@@ -253,6 +253,7 @@ function diskType(){
 }
 
 function getGrub(){
+  mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg
   Boot="${1:-/boot}"
   folder=`find "$Boot" -type d -name "grub*" 2>/dev/null |head -n1`
   [ -n "$folder" ] || return
@@ -277,7 +278,7 @@ function lowMem(){
 
 if [[ "$loaderMode" == "0" ]]; then
   Grub=`getGrub "/boot"`
-  [ -z "$Grub" ] && echo -ne "Error! Not Found grub.\n" && echo "尝试修复" && mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg;
+  [ -z "$Grub" ] && echo -ne "Error! Not Found grub.\n";
   GRUBDIR=`echo "$Grub" |cut -d':' -f1`
   GRUBFILE=`echo "$Grub" |cut -d':' -f2`
   GRUBVER=`echo "$Grub" |cut -d':' -f3`
@@ -490,7 +491,7 @@ if [[ "$linux_relese" == 'debian' ]]; then
 fi
 
 if [[ "$loaderMode" == "0" ]]; then
-  [[ ! -f "${GRUBDIR}/${GRUBFILE}" ]] && echo "Error! Not Found ${GRUBFILE}. " && echo "尝试修复" && mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg;
+  [[ ! -f "${GRUBDIR}/${GRUBFILE}" ]] && echo "Error! Not Found ${GRUBFILE}. ";
 
   [[ ! -f "${GRUBDIR}/${GRUBFILE}.old" ]] && [[ -f "${GRUBDIR}/${GRUBFILE}.bak" ]] && mv -f "${GRUBDIR}/${GRUBFILE}.bak" "${GRUBDIR}/${GRUBFILE}.old";
   mv -f "${GRUBDIR}/${GRUBFILE}" "${GRUBDIR}/${GRUBFILE}.bak";
