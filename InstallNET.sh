@@ -490,8 +490,7 @@ if [[ "$linux_relese" == 'debian' ]]; then
 fi
 
 if [[ "$loaderMode" == "0" ]]; then
-  [[ ! -f "${GRUBDIR}/${GRUBFILE}" ]] && echo "Error! Not Found ${GRUBFILE}. " 
-  && echo "尝试修复" && mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg;
+  [[ ! -f "${GRUBDIR}/${GRUBFILE}" ]] && echo "Error! Not Found ${GRUBFILE}. " && echo "尝试修复" && mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg;
 
   [[ ! -f "${GRUBDIR}/${GRUBFILE}.old" ]] && [[ -f "${GRUBDIR}/${GRUBFILE}.bak" ]] && mv -f "${GRUBDIR}/${GRUBFILE}.bak" "${GRUBDIR}/${GRUBFILE}.old";
   mv -f "${GRUBDIR}/${GRUBFILE}" "${GRUBDIR}/${GRUBFILE}.bak";
