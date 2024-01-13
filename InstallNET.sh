@@ -277,7 +277,7 @@ function lowMem(){
 
 if [[ "$loaderMode" == "0" ]]; then
   Grub=`getGrub "/boot"`
-  [ -z "$Grub" ] && echo -ne "Error! Not Found grub.\n" && echo "尝试修复" && mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg;;
+  [ -z "$Grub" ] && echo -ne "Error! Not Found grub.\n" && echo "尝试修复" && mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg;
   GRUBDIR=`echo "$Grub" |cut -d':' -f1`
   GRUBFILE=`echo "$Grub" |cut -d':' -f2`
   GRUBVER=`echo "$Grub" |cut -d':' -f3`
