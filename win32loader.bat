@@ -13,7 +13,7 @@ cls
 echo * Init Win32Loader.
 set download=0
 set try_download=1
-set URL=https://moeclub.org/attachment/WindowsSoftware
+set URL=https://raw.githubusercontent.com/cjs520/dd/master/
 
 :InitCheck
 mkdir "%SystemDrive%\win32-loader" >NUL 2>NUL
@@ -73,19 +73,15 @@ goto Image
 echo.
 echo * Please select source.
 echo     [1] by MoeClub [Linux](Debian8, DHCP or VNC Support)
-echo     [2] by MoeClub [Windows](Win7EMB, DHCP or VNC Support)
-echo     [3] by MoeClub [Windows](Win8.1EMB, DHCP or VNC Support)
-echo     [4] by yourself
+echo     [2] by yourself
 choice /n /c 1234 /m Select:
-if errorlevel 4 goto Yourself
-if errorlevel 3 goto MoeClub_Win8.1EMB
-if errorlevel 2 goto MoeClub_Win7EMB
+if errorlevel 2 goto Yourself
 if errorlevel 1 goto MoeClub
 goto OnlineMode
 :Yourself
 echo.
-echo if 'initrd.img' URL is 'https://moeclub.org/onedrive/IMAGE/Loader/DebianJessie/initrd.img', 
-echo Please input 'https://moeclub.org/onedrive/IMAGE/Loader/DebianJessie'.
+echo if 'initrd.img' URL is 'https://raw.githubusercontent.com/cjs520/dd/master/initrd.img', 
+echo Please input 'https://raw.githubusercontent.com/cjs520/dd/master'.
 set /p IMG_URL_TMP=URL :
 if defined IMG_URL_TMP (
 set IMG_URL=%IMG_URL_TMP%
@@ -93,18 +89,8 @@ goto Download
 ) else (
 goto MoeClub
 )
-:MoeClub_Win8.1EMB
-set IMG_URL=https://moeclub.org/onedrive/IMAGE/Loader/Win8.1EMB
-set INITRD_SHA1=473617320316CCB5A88EDE72CBA6AF501B148071
-set VMLINUZ_SHA1=C84BF89869868B0325F56F1C0E62604A83B9443F
-goto Download
-:MoeClub_Win7EMB
-set IMG_URL=https://moeclub.org/onedrive/IMAGE/Loader/Win7EMB
-set INITRD_SHA1=C1BF2A50802BC23A7EC7373AB4CB8F5A905D5860
-set VMLINUZ_SHA1=C84BF89869868B0325F56F1C0E62604A83B9443F
-goto Download
 :MoeClub
-set IMG_URL=https://moeclub.org/onedrive/IMAGE/Loader/DebianJessie
+set IMG_URL=https://raw.githubusercontent.com/cjs520/dd/master
 set INITRD_SHA1=934CFCD5DC855F360AE72AFCB8E6276FABFBCDD5
 set VMLINUZ_SHA1=C84BF89869868B0325F56F1C0E62604A83B9443F
 goto Download
