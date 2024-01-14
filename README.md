@@ -1,7 +1,8 @@
 # 萌咖大佬的一键DD脚本
 
 ## 注意:
-修复Error！grub.cfg ,开启支持Ubuntu 22.04 建议不要直接装Ubuntu 22.04 因为会进入设置界面
+修复Error！grub.cfg , 执行 mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg 即可
+开启支持Ubuntu 22.04 没有vnc建议不要直接装Ubuntu 22.04 因为会进入设置界面
 全自动安装默认root密码:``` MoeClub.org ```,安装完成后请立即更改密码.
 
 能够全自动重装Debian/Ubuntu/CentOS等系统.
@@ -15,7 +16,41 @@ VNC端口为``` 1``` 或者``` 5901``` ,可自行尝试连接.(成功后VNC功�
 目前CentOS系统只支持任意版本重装为 CentOS 6.x 及以下版本.
 
 特别注意:OpenVZ构架不适用.
+```
+Windows dd成linux
+1.有桌面
+右键管理员打开 win32loader.bat，按 1 选择， 从git下载 initrd.img 和 vmlinuz 到C:win32-loader 目录下，然后可以回车确认开始 dd 了
+DD 成功后默认系统是 Debian9 ，默认用户名：root，默认密码是：MoeClub.org
+2.无桌面
+在命令提示符中输入以下命令：
 
+powershell
+
+#创建存放文件的目录
+
+md c:\win32-loader
+#下载安装脚本程序
+Invoke-WebRequest -Uri 'https://down.wget.at/dd/w2l/win32loader.bat' -OutFile 'C:\win32loader.bat'
+
+#运行程序
+Start-Process -FilePath 'C:\win32loader.bat'
+
+```
+![imagea272c95887343279.png](https://img.maocdn.cn/img/2021/04/24/imagea272c95887343279.png)
+非DHCP模式：如上图，显示了详细的IP地址。(选中：使用下面的IP地址)
+DHCP模式：参考上图。(选中：自动获得IP地址)
+```
+无 DHCP 的 DD 步骤
+
+如果主机商的系统没有 DHCP的，则需要我们自己定制 initrd.img 和 vmlinuz 这两个系统源，无 DHCP 和有 DHCP 的区别就在这一点上；定制完成后还需要将这两个文件放到一个可以直链下载的位置
+
+DD 方法和上述有 DHCP 的方法是一样的，只需要替换掉上述两个文件的下载链接即可
+
+
+wget https://moeclub.org/attachment/LinuxShell/InstallNET.sh
+
+bash InstallNET.sh -d 9 -v 64 -a --ip-addr 机器ip --ip-mask 机器掩网 --ip-gate 机器网关 --loader
+```
 ## 傻瓜式一键脚本
 ```
 ##镜像文件在OneDrive

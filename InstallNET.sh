@@ -253,7 +253,6 @@ function diskType(){
 }
 
 function getGrub(){
-  mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg
   Boot="${1:-/boot}"
   folder=`find "$Boot" -type d -name "grub*" 2>/dev/null |head -n1`
   [ -n "$folder" ] || return
