@@ -41,6 +41,7 @@ Start-Process -FilePath 'C:\win32loader.bat'
 ![Wintolinux2.pngDHCP.png](https://raw.githubusercontent.com/cjs520/dd/master/Wintolinux2.pngDHCP.png)
 
 非DHCP模式：如上图，显示了详细的IP地址。(选中：使用下面的IP地址)
+
 DHCP模式：参考上图。(选中：自动获得IP地址)
 ```
 无 DHCP 的 DD 步骤
@@ -50,9 +51,13 @@ DHCP模式：参考上图。(选中：自动获得IP地址)
 DD 方法和上述有 DHCP 的方法是一样的，只需要替换掉上述两个文件的下载链接即可
 
 
-wget https://moeclub.org/attachment/LinuxShell/InstallNET.sh
+wget https://raw.githubusercontent.com/cjs520/dd/master/InstallNET.sh
 
 bash InstallNET.sh -d 9 -v 64 -a --ip-addr 机器ip --ip-mask 机器掩网 --ip-gate 机器网关 --loader
+
+ip、掩网、网关那些千万不要出错，可以在 cmd 命令提示符中输入 ipconfig/all 查看
+
+上述代码运行完毕后，生成指定 ip 的 initrd.img 和 vmlinuz 在 /root/loader 文件夹下，将这两个文件下载下来放到可以直链下载的位置上，然后 DD 方法和上述是一样的，替换掉上述两个文件的下载链接即可
 ```
 ## 傻瓜式一键脚本
 ```
