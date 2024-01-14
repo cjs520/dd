@@ -38,7 +38,8 @@ Invoke-WebRequest -Uri 'https://down.wget.at/dd/w2l/win32loader.bat' -OutFile 'C
 Start-Process -FilePath 'C:\win32loader.bat'
 
 ```
-![imagea272c95887343279.png](https://img.maocdn.cn/img/2021/04/24/imagea272c95887343279.png)
+![Wintolinux2.pngDHCP.png](https://raw.githubusercontent.com/cjs520/dd/master/Wintolinux2.pngDHCP.png)
+
 非DHCP模式：如上图，显示了详细的IP地址。(选中：使用下面的IP地址)
 DHCP模式：参考上图。(选中：自动获得IP地址)
 ```
