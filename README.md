@@ -18,6 +18,9 @@ VNC端口为``` 1``` 或者``` 5901``` ,可自行尝试连接.(成功后VNC功�
 目前CentOS系统只支持任意版本重装为 CentOS 6.x 及以下版本.
 
 特别注意:OpenVZ构架不适用.
+
+https://raw.githubusercontent.com/cjs520/dd/master/win32loader.bat
+
 ```
 Windows dd成linux
 1.有桌面
@@ -32,7 +35,7 @@ powershell
 
 md c:\win32-loader
 #下载安装脚本程序
-Invoke-WebRequest -Uri 'https://down.wget.at/dd/w2l/win32loader.bat' -OutFile 'C:\win32loader.bat'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/cjs520/dd/master/win32loader.bat' -OutFile 'C:\win32loader.bat'
 
 #运行程序
 Start-Process -FilePath 'C:\win32loader.bat'
