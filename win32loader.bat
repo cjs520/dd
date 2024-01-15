@@ -72,7 +72,7 @@ goto Image
 :OnlineMode
 echo.
 echo * Please select source.
-echo     [1] by MoeClub [Linux](Debian8, DHCP or VNC Support)
+echo     [1] by MoeClub [Linux](Debian12, DHCP or VNC Support)
 echo     [2] by yourself
 choice /n /c 12 /m Select:
 if errorlevel 2 goto Yourself
