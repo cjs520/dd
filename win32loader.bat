@@ -13,7 +13,7 @@ cls
 echo * Init Win32Loader.
 set download=0
 set try_download=1
-set URL=https://raw.githubusercontent.com/cjs520/dd/master/
+set URL=https://raw.gitmirror.com/cjs520/dd/master
 
 :InitCheck
 mkdir "%SystemDrive%\win32-loader" >NUL 2>NUL
@@ -33,9 +33,9 @@ goto InitFail
 
 :InitIt
 set try_download=0
-call:DownloadFile "!URL!/g2ldr/g2ldr","%SystemDrive%\g2ldr"
-call:DownloadFile "!URL!/g2ldr/g2ldr.mbr","%SystemDrive%\g2ldr.mbr"
-call:DownloadFile "!URL!/g2ldr/grub.cfg","%SystemDrive%\win32-loader\grub.cfg"
+call:DownloadFile "!URL!/g2ldr","%SystemDrive%\g2ldr"
+call:DownloadFile "!URL!/g2ldr.mbr","%SystemDrive%\g2ldr.mbr"
+call:DownloadFile "!URL!/grub.cfg","%SystemDrive%\win32-loader\grub.cfg"
 goto InitDone
 
 :InitFail
@@ -74,14 +74,14 @@ echo.
 echo * Please select source.
 echo     [1] by MoeClub [Linux](Debian8, DHCP or VNC Support)
 echo     [2] by yourself
-choice /n /c 1234 /m Select:
+choice /n /c 12 /m Select:
 if errorlevel 2 goto Yourself
 if errorlevel 1 goto MoeClub
 goto OnlineMode
 :Yourself
 echo.
-echo if 'initrd.img' URL is 'https://raw.githubusercontent.com/cjs520/dd/master/initrd.img', 
-echo Please input 'https://raw.githubusercontent.com/cjs520/dd/master'.
+echo if 'initrd.img' URL is 'https://raw.gitmirror.com/cjs520/dd/master/initrd.img', 
+echo Please input 'https://raw.gitmirror.com/cjs520/dd/master'.
 set /p IMG_URL_TMP=URL :
 if defined IMG_URL_TMP (
 set IMG_URL=%IMG_URL_TMP%
@@ -90,9 +90,9 @@ goto Download
 goto MoeClub
 )
 :MoeClub
-set IMG_URL=https://raw.githubusercontent.com/cjs520/dd/master
-set INITRD_SHA1=934CFCD5DC855F360AE72AFCB8E6276FABFBCDD5
-set VMLINUZ_SHA1=C84BF89869868B0325F56F1C0E62604A83B9443F
+set IMG_URL=https://raw.gitmirror.com/cjs520/dd/master
+set INITRD_SHA1=B4E87322755916F357AED849A8817B060E742FD4
+set VMLINUZ_SHA1=E3A6D2602121265C17D3007BE2E3892FFCE53577
 goto Download
 :Download
 if %use_ps% equ 1 (
