@@ -13,7 +13,7 @@ cls
 echo * Init Win32Loader.
 set download=0
 set try_download=1
-set URL=https://raw.gitmirror.com/cjs520/dd/master
+set URL=https://raw.githubusercontent.com/cjs520/dd/master
 
 :InitCheck
 mkdir "%SystemDrive%\win32-loader" >NUL 2>NUL
@@ -80,8 +80,8 @@ if errorlevel 1 goto MoeClub
 goto OnlineMode
 :Yourself
 echo.
-echo if 'initrd.img' URL is 'https://raw.gitmirror.com/cjs520/dd/master/initrd.img', 
-echo Please input 'https://raw.gitmirror.com/cjs520/dd/master'.
+echo if 'initrd.img' URL is 'https://raw.githubusercontent.com/cjs520/dd/master/initrd.img', 
+echo Please input 'https://raw.githubusercontent.com/cjs520/dd/master'.
 set /p IMG_URL_TMP=URL :
 if defined IMG_URL_TMP (
 set IMG_URL=%IMG_URL_TMP%
@@ -90,7 +90,7 @@ goto Download
 goto MoeClub
 )
 :MoeClub
-set IMG_URL=https://raw.gitmirror.com/cjs520/dd/master
+set IMG_URL=https://raw.githubusercontent.com/cjs520/dd/master
 set INITRD_SHA1=E69878A29FBDFE0E90D13E1AA865EC174136865F
 set VMLINUZ_SHA1=0BBB594E307BF5B3A7094E35BE29228B0E212CF8
 goto Download

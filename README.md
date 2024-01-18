@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/cjs520/dd/master/win32loader.bat
 Windows dd成linux
 1.有桌面
 右键管理员打开 win32loader.bat，按 1 选择， 从git下载 initrd.img 和 vmlinuz 到C:win32-loader 目录下，然后可以回车确认开始 dd 了
-DD 成功后默认系统是 Debian9 ，默认用户名：root，默认密码是：123456
+DD 成功后默认系统是 Debian9 ，默认用户名：root，默认密码是：lones666
 2.无桌面
 在命令提示符中输入以下命令：
 
@@ -35,7 +35,7 @@ powershell
 
 md c:\win32-loader
 #下载安装脚本程序
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/cjs520/dd/master/win32loader.bat' -OutFile 'C:\win32loader.bat'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/cjs520/dd/master/win32loader.bat' -OutFile 'C:\win32loader.bat' -SkipCertificateCheck
 
 #运行程序
 Start-Process -FilePath 'C:\win32loader.bat'
